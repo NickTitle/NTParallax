@@ -10,16 +10,17 @@
 
 @implementation AppDelegate
 
+@synthesize rVC;
 @synthesize mR;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    rVC = [NTParallaxRootViewController new];
+    [self.window setRootViewController:rVC];
     [self.window makeKeyAndVisible];
 
-    [self testComponents];
+//    [self testComponents];
     
     return YES;
 }

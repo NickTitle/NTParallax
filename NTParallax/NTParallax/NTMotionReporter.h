@@ -15,5 +15,11 @@
 
 @property (strong, nonatomic) CMMotionManager *motionMan;
 @property (strong, nonatomic) NSOperationQueue *motionUpdateQueue;
+@property (nonatomic, assign) double rawPitch;
+@property (nonatomic, assign) double rawRoll;
+@property (nonatomic, assign) double calcPitch;
+@property (nonatomic, assign) double calcRoll;
+
+
 
 @end

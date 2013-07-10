@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NTParallaxRootViewController.h"
 #import "NTMotionReporter.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain) NTParallaxRootViewController *rVC;
 @property (nonatomic, retain) NTMotionReporter *mR;
 
 @end
