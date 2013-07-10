@@ -79,6 +79,7 @@ NSMutableArray *pStack;
 
 - (void)removeFromPStack:(NTParallaxLayer *)pL {
     [pStack removeObject:pL];
+    [notif removeObserver:pL name:@"motionReported" object:nil];
     [pL.parallaxView removeFromSuperview];
     
 }
