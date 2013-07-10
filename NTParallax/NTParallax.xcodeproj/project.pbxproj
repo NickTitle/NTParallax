@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19FEAFF7178E1AE800F27811 /* testEarth.png in Resources */ = {isa = PBXBuildFile; fileRef = 19FEAFF5178E1AE800F27811 /* testEarth.png */; };
+		19FEAFF8178E1AE800F27811 /* testEarth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19FEAFF6178E1AE800F27811 /* testEarth@2x.png */; };
 		8E3D9D18178D219200B80DAF /* NTParallaxRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D9D14178D1E6500B80DAF /* NTParallaxRootViewController.m */; };
 		8E3D9D19178D242500B80DAF /* NTParallaxStackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D9D12178D1D7100B80DAF /* NTParallaxStackController.m */; };
 		8E3D9D1C178D254200B80DAF /* NTParallaxLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D9D1B178D253300B80DAF /* NTParallaxLayer.m */; };
 		8E3D9D1F178D3E9A00B80DAF /* testBG@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E3D9D1E178D3D6D00B80DAF /* testBG@2x.jpg */; };
-		8E3D9D21178D43A200B80DAF /* testFG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E3D9D20178D431E00B80DAF /* testFG@2x.png */; };
 		8E8BF7BC178CE36B006A81B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8BF7BB178CE36B006A81B0 /* UIKit.framework */; };
 		8E8BF7BE178CE36B006A81B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8BF7BD178CE36B006A81B0 /* Foundation.framework */; };
 		8E8BF7C0178CE36B006A81B0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8BF7BF178CE36B006A81B0 /* CoreGraphics.framework */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19FEAFF5178E1AE800F27811 /* testEarth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testEarth.png; sourceTree = "<group>"; };
+		19FEAFF6178E1AE800F27811 /* testEarth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testEarth@2x.png"; sourceTree = "<group>"; };
 		8E3D9D10178D138800B80DAF /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		8E3D9D11178D1D7100B80DAF /* NTParallaxStackController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTParallaxStackController.h; sourceTree = "<group>"; };
 		8E3D9D12178D1D7100B80DAF /* NTParallaxStackController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTParallaxStackController.m; sourceTree = "<group>"; };
@@ -34,7 +37,6 @@
 		8E3D9D1A178D253300B80DAF /* NTParallaxLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTParallaxLayer.h; sourceTree = "<group>"; };
 		8E3D9D1B178D253300B80DAF /* NTParallaxLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTParallaxLayer.m; sourceTree = "<group>"; };
 		8E3D9D1E178D3D6D00B80DAF /* testBG@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "testBG@2x.jpg"; sourceTree = "<group>"; };
-		8E3D9D20178D431E00B80DAF /* testFG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testFG@2x.png"; sourceTree = "<group>"; };
 		8E8BF7B8178CE36B006A81B0 /* NTParallax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTParallax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E8BF7BB178CE36B006A81B0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8E8BF7BD178CE36B006A81B0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -84,7 +86,8 @@
 		8E8BF7AF178CE36B006A81B0 = {
 			isa = PBXGroup;
 			children = (
-				8E3D9D20178D431E00B80DAF /* testFG@2x.png */,
+				19FEAFF5178E1AE800F27811 /* testEarth.png */,
+				19FEAFF6178E1AE800F27811 /* testEarth@2x.png */,
 				8E3D9D1E178D3D6D00B80DAF /* testBG@2x.jpg */,
 				8E8BF7C1178CE36B006A81B0 /* NTParallax */,
 				8E8BF7BA178CE36B006A81B0 /* Frameworks */,
@@ -193,9 +196,10 @@
 				8E3D9D1F178D3E9A00B80DAF /* testBG@2x.jpg in Resources */,
 				8E8BF7C6178CE36B006A81B0 /* InfoPlist.strings in Resources */,
 				8E8BF7CE178CE36B006A81B0 /* Default.png in Resources */,
-				8E3D9D21178D43A200B80DAF /* testFG@2x.png in Resources */,
 				8E8BF7D0178CE36B006A81B0 /* Default@2x.png in Resources */,
 				8E8BF7D2178CE36B006A81B0 /* Default-568h@2x.png in Resources */,
+				19FEAFF7178E1AE800F27811 /* testEarth.png in Resources */,
+				19FEAFF8178E1AE800F27811 /* testEarth@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,5 +10,6 @@
 #define NTParallax_constants_h
 
 #define notif [NSNotificationCenter defaultCenter]
+#define iP5Frame CGRectMake(0, 0, 320, 568)
 
 #endif

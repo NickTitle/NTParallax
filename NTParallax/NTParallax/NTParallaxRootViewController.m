@@ -22,14 +22,15 @@
     if (self) {
     
         
-        UIButton *resetFrameButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [resetFrameButton setFrame:CGRectMake(22, 22, self.view.frame.size.width-88, 88)];
-        [resetFrameButton setTitle:@"Click to reset zero point" forState:UIControlStateNormal];
-        [resetFrameButton addTarget:self action:@selector(resetFrameNotification) forControlEvents:UIControlEventTouchUpInside];
+//        UIButton *resetFrameButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//        [resetFrameButton setFrame:CGRectMake(22, 22, self.view.frame.size.width-88, 88)];
+//        [resetFrameButton setTitle:@"Click to reset zero point" forState:UIControlStateNormal];
+//        [resetFrameButton addTarget:self action:@selector(resetFrameNotification) forControlEvents:UIControlEventTouchUpInside];
+//        [self.view addSubview:resetFrameButton];        
         
         [self setupParallaxControls];
         
-        [self.view addSubview:resetFrameButton];
+
         
         
     }
@@ -40,14 +41,46 @@
     sC = [NTParallaxStackController new];
     [self.view addSubview:sC.view];
     
-    UIImageView *bottomView = [[UIImageView alloc] initWithFrame:CGRectMake(-20, -20, 500, 700)];
+    UIImageView *bottomView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 500, 700)];
     [bottomView setImage:[UIImage imageNamed:@"testBG.jpg"]];
-    UIImageView *topView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 175, 250, 300)];
-    [topView setImage:[UIImage imageNamed:@"testFG.png"]];
     
-    [sC addLayerToPStack:bottomView motionRange:-100 origin:CGPointMake(-20, 50)];
-    [sC addLayerToPStack:topView motionRange:60 origin:CGPointMake(30, 300)];
+    UIView *midView = [[UIView alloc] initWithFrame:iP5Frame];
+    UILabel *headline = [[UILabel alloc] initWithFrame:CGRectMake(0, 88, 320, 276)];
+    [headline setBackgroundColor:[UIColor clearColor]];
+    [headline setNumberOfLines:0];
+    [headline setFont:[UIFont boldSystemFontOfSize:64]];
+    [headline setTextAlignment:NSTextAlignmentCenter];
+    [headline setTextColor:[UIColor whiteColor]];
+    [headline setText:@"AND YET \nIT MOVES"];
+    [midView addSubview:headline];
     
+    UIImageView *earthView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 180, 180)];
+    [earthView setImage:[UIImage imageNamed:@"testEarth.png"]];
+    UITapGestureRecognizer *earthTap = [UITapGestureRecognizer new];
+    [earthTap addTarget:self action:@selector(resetFrameNotification)];
+    [earthView addGestureRecognizer:earthTap];
+    [earthView setUserInteractionEnabled:TRUE];
+    
+    UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 350, 320, 44)];
+    UILabel *headline2 = [UILabel new];
+    [headline2 setFrame:CGRectMake(0, 0, 320, 44)];
+    [headline2 setBackgroundColor:[UIColor clearColor]];
+    [headline2 setNumberOfLines:0];
+    [headline2 setTextAlignment:NSTextAlignmentCenter];
+    [headline2 setTextColor:[UIColor whiteColor]];
+    [headline2 setText:@"Click earth to reset zero point"];
+    [headline2 setFont:[UIFont systemFontOfSize:18]];
+    [topView addSubview:headline2];
+    
+    
+    [sC addLayerToPStack:bottomView motionRange:-150 origin:CGPointMake(-40, -20)];
+
+    [sC addLayerToPStack:midView motionRange:-120 origin:CGPointMake(0, 0)];
+
+    [sC addLayerToPStack:earthView motionRange:40 origin:CGPointMake(70, 225)];
+    
+    [sC addLayerToPStack:topView motionRange:80 origin:CGPointMake(0, 350)];
+
 }
 
 - (void) resetFrameNotification {
