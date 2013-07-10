@@ -40,13 +40,13 @@
     sC = [NTParallaxStackController new];
     [self.view addSubview:sC.view];
     
-    UIImageView *bottomView = [[UIImageView alloc] initWithFrame:CGRectMake(-10, -10, 350, 462)];
+    UIImageView *bottomView = [[UIImageView alloc] initWithFrame:CGRectMake(-20, -20, 500, 700)];
     [bottomView setImage:[UIImage imageNamed:@"testBG.jpg"]];
     UIImageView *topView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 175, 250, 300)];
     [topView setImage:[UIImage imageNamed:@"testFG.png"]];
     
-    [sC addLayerToPStack:bottomView motionRange:100 origin:CGPointMake(-10, 100)];
-    [sC addLayerToPStack:topView vRange:-60 hRange:-120 origin:CGPointMake(30, 300)];
+    [sC addLayerToPStack:bottomView motionRange:-100 origin:CGPointMake(-20, 50)];
+    [sC addLayerToPStack:topView motionRange:60 origin:CGPointMake(30, 300)];
     
 }
 
