@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1995F3A5178EFAF900261A07 /* NTMotionReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1995F3A0178EFA9300261A07 /* NTMotionReporter.m */; };
+		1995F3A6178EFAFB00261A07 /* NTParallaxLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1995F3A2178EFA9300261A07 /* NTParallaxLayer.m */; };
+		1995F3A7178EFAFE00261A07 /* NTParallaxStackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1995F3A4178EFA9300261A07 /* NTParallaxStackController.m */; };
 		19FEAFF7178E1AE800F27811 /* testEarth.png in Resources */ = {isa = PBXBuildFile; fileRef = 19FEAFF5178E1AE800F27811 /* testEarth.png */; };
 		19FEAFF8178E1AE800F27811 /* testEarth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19FEAFF6178E1AE800F27811 /* testEarth@2x.png */; };
 		8E3D9D18178D219200B80DAF /* NTParallaxRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D9D14178D1E6500B80DAF /* NTParallaxRootViewController.m */; };
-		8E3D9D19178D242500B80DAF /* NTParallaxStackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D9D12178D1D7100B80DAF /* NTParallaxStackController.m */; };
-		8E3D9D1C178D254200B80DAF /* NTParallaxLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D9D1B178D253300B80DAF /* NTParallaxLayer.m */; };
 		8E3D9D1F178D3E9A00B80DAF /* testBG@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E3D9D1E178D3D6D00B80DAF /* testBG@2x.jpg */; };
 		8E8BF7BC178CE36B006A81B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8BF7BB178CE36B006A81B0 /* UIKit.framework */; };
 		8E8BF7BE178CE36B006A81B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8BF7BD178CE36B006A81B0 /* Foundation.framework */; };
@@ -23,19 +24,20 @@
 		8E8BF7D0178CE36B006A81B0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E8BF7CF178CE36B006A81B0 /* Default@2x.png */; };
 		8E8BF7D2178CE36B006A81B0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E8BF7D1178CE36B006A81B0 /* Default-568h@2x.png */; };
 		8E8BF7D9178CE802006A81B0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8BF7D8178CE802006A81B0 /* CoreMotion.framework */; };
-		8E8BF7DC178CE818006A81B0 /* NTMotionReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8BF7DB178CE818006A81B0 /* NTMotionReporter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1995F39F178EFA9300261A07 /* NTMotionReporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTMotionReporter.h; sourceTree = "<group>"; };
+		1995F3A0178EFA9300261A07 /* NTMotionReporter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTMotionReporter.m; sourceTree = "<group>"; };
+		1995F3A1178EFA9300261A07 /* NTParallaxLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTParallaxLayer.h; sourceTree = "<group>"; };
+		1995F3A2178EFA9300261A07 /* NTParallaxLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTParallaxLayer.m; sourceTree = "<group>"; };
+		1995F3A3178EFA9300261A07 /* NTParallaxStackController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTParallaxStackController.h; sourceTree = "<group>"; };
+		1995F3A4178EFA9300261A07 /* NTParallaxStackController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTParallaxStackController.m; sourceTree = "<group>"; };
 		19FEAFF5178E1AE800F27811 /* testEarth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testEarth.png; sourceTree = "<group>"; };
 		19FEAFF6178E1AE800F27811 /* testEarth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testEarth@2x.png"; sourceTree = "<group>"; };
 		8E3D9D10178D138800B80DAF /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		8E3D9D11178D1D7100B80DAF /* NTParallaxStackController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTParallaxStackController.h; sourceTree = "<group>"; };
-		8E3D9D12178D1D7100B80DAF /* NTParallaxStackController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTParallaxStackController.m; sourceTree = "<group>"; };
 		8E3D9D13178D1E6500B80DAF /* NTParallaxRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTParallaxRootViewController.h; sourceTree = "<group>"; };
 		8E3D9D14178D1E6500B80DAF /* NTParallaxRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTParallaxRootViewController.m; sourceTree = "<group>"; };
-		8E3D9D1A178D253300B80DAF /* NTParallaxLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTParallaxLayer.h; sourceTree = "<group>"; };
-		8E3D9D1B178D253300B80DAF /* NTParallaxLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTParallaxLayer.m; sourceTree = "<group>"; };
 		8E3D9D1E178D3D6D00B80DAF /* testBG@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "testBG@2x.jpg"; sourceTree = "<group>"; };
 		8E8BF7B8178CE36B006A81B0 /* NTParallax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTParallax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E8BF7BB178CE36B006A81B0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -51,8 +53,6 @@
 		8E8BF7CF178CE36B006A81B0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		8E8BF7D1178CE36B006A81B0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		8E8BF7D8178CE802006A81B0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		8E8BF7DA178CE818006A81B0 /* NTMotionReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTMotionReporter.h; sourceTree = "<group>"; };
-		8E8BF7DB178CE818006A81B0 /* NTMotionReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTMotionReporter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,22 +70,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8E3D9D15178D1E6B00B80DAF /* Classes */ = {
+		1995F39E178EFA9300261A07 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				8E8BF7DA178CE818006A81B0 /* NTMotionReporter.h */,
-				8E8BF7DB178CE818006A81B0 /* NTMotionReporter.m */,
-				8E3D9D1A178D253300B80DAF /* NTParallaxLayer.h */,
-				8E3D9D1B178D253300B80DAF /* NTParallaxLayer.m */,
-				8E3D9D11178D1D7100B80DAF /* NTParallaxStackController.h */,
-				8E3D9D12178D1D7100B80DAF /* NTParallaxStackController.m */,
+				1995F39F178EFA9300261A07 /* NTMotionReporter.h */,
+				1995F3A0178EFA9300261A07 /* NTMotionReporter.m */,
+				1995F3A1178EFA9300261A07 /* NTParallaxLayer.h */,
+				1995F3A2178EFA9300261A07 /* NTParallaxLayer.m */,
+				1995F3A3178EFA9300261A07 /* NTParallaxStackController.h */,
+				1995F3A4178EFA9300261A07 /* NTParallaxStackController.m */,
 			);
-			name = Classes;
+			path = src;
 			sourceTree = "<group>";
 		};
 		8E8BF7AF178CE36B006A81B0 = {
 			isa = PBXGroup;
 			children = (
+				1995F39E178EFA9300261A07 /* src */,
 				19FEAFF5178E1AE800F27811 /* testEarth.png */,
 				19FEAFF6178E1AE800F27811 /* testEarth@2x.png */,
 				8E3D9D1E178D3D6D00B80DAF /* testBG@2x.jpg */,
@@ -121,7 +122,6 @@
 				8E8BF7CB178CE36B006A81B0 /* AppDelegate.m */,
 				8E3D9D13178D1E6500B80DAF /* NTParallaxRootViewController.h */,
 				8E3D9D14178D1E6500B80DAF /* NTParallaxRootViewController.m */,
-				8E3D9D15178D1E6B00B80DAF /* Classes */,
 				8E8BF7C2178CE36B006A81B0 /* Supporting Files */,
 			);
 			path = NTParallax;
@@ -210,12 +210,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E3D9D1C178D254200B80DAF /* NTParallaxLayer.m in Sources */,
+				1995F3A6178EFAFB00261A07 /* NTParallaxLayer.m in Sources */,
+				1995F3A5178EFAF900261A07 /* NTMotionReporter.m in Sources */,
 				8E8BF7C8178CE36B006A81B0 /* main.m in Sources */,
 				8E8BF7CC178CE36B006A81B0 /* AppDelegate.m in Sources */,
-				8E8BF7DC178CE818006A81B0 /* NTMotionReporter.m in Sources */,
 				8E3D9D18178D219200B80DAF /* NTParallaxRootViewController.m in Sources */,
-				8E3D9D19178D242500B80DAF /* NTParallaxStackController.m in Sources */,
+				1995F3A7178EFAFE00261A07 /* NTParallaxStackController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

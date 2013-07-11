@@ -20,14 +20,7 @@
     [self.window setRootViewController:rVC];
     [self.window makeKeyAndVisible];
 
-//    [self testComponents];
-    
     return YES;
-}
-
--(void) testComponents {
-    mR = [NTMotionReporter singleReporter];
-    NSLog(@"Created mR! (%@)", mR);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
