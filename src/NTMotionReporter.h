@@ -20,6 +20,6 @@
 @property (nonatomic, assign) double calcPitch;
 @property (nonatomic, assign) double calcRoll;
 
-
+- (void) motionReporterShouldReport:(BOOL)reportBool;
 
 @end

@@ -70,17 +70,22 @@ NSMutableArray *pStack;
     [pStack addObject:pL];
     [notif addObserver:pL selector:@selector(updateViewFromNotification:) name:@"motionReported" object:nil];
     [self.view addSubview:pL.parallaxView];
+    [nTMR motionReporterShouldReport:true];
 }
 
 - (void)insertIntoPStack:(NTParallaxLayer *)pL atIndex:(int)index {
     [pStack insertObject:pL atIndex:index];
     [self.view insertSubview:pL.parallaxView atIndex:index];
+    [nTMR motionReporterShouldReport:true];
 }
 
 - (void)removeFromPStack:(NTParallaxLayer *)pL {
     [pStack removeObject:pL];
     [notif removeObserver:pL name:@"motionReported" object:nil];
     [pL.parallaxView removeFromSuperview];
+    if ([pStack count] == 0) {
+        [nTMR motionReporterShouldReport:FALSE];
+    }
     
 }
 

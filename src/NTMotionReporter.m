@@ -28,17 +28,17 @@ float refRoll = 0;
 float cachePitch = 0;
 float cacheRoll = 0;
 
+float lastPitch = 0;
+float lastRoll = 0;
+
 //This is used similarly to old retain/release to prevent the app from grabbing data when it isn't needed
-int activeRequestors = 0;
+bool isReportingMotion = 0;
 
 
 + (NTMotionReporter *) singleReporter {
     if (mR == nil) {
         mR = [[super allocWithZone:NULL] init];
-        NSLog(@"I've been called into existence!");
         [mR setupMotionManager];
-        
-        [notif addObserver:mR selector:@selector(orientToCurrentRotation) name:@"resetFrame" object:nil];
     }
     return mR;
 }
@@ -46,16 +46,33 @@ int activeRequestors = 0;
 - (void) setupMotionManager {
     if (motionMan == nil) {
         motionMan = [CMMotionManager new];
-        //update interval at 48 frames per second
+        //update interval set at 48 frames per second, so as not to waste power
         [motionMan setDeviceMotionUpdateInterval:.021];
         motionUpdateQueue = [NSOperationQueue new];
-        [motionMan startDeviceMotionUpdatesToQueue:motionUpdateQueue withHandler:^(CMDeviceMotion *motion, NSError *error){
-            [self gatherMotion:motion andError:error];
-        }];
+        
+        [notif addObserver:self selector:@selector(orientToCurrentRotation) name:@"resetFrame" object:nil];
         
         //Enable this method to use the automatic refpoint fixes below
 //        [self enableAutomaticReferencePointReset];
         
+    }
+}
+
+// This method controls starting and stopping of motion reporting
+- (void) motionReporterShouldReport:(BOOL)reportBool {
+    if (reportBool) {
+        if (isReportingMotion == false) {
+            [motionMan startDeviceMotionUpdatesToQueue:motionUpdateQueue withHandler:^(CMDeviceMotion *motion, NSError *error){
+                [self gatherMotion:motion andError:error];
+            }];
+            isReportingMotion = true;
+        }
+    }
+    else {
+        if (isReportingMotion == true) {
+        [motionMan stopDeviceMotionUpdates];
+        }
+        isReportingMotion = false;
     }
 }
 
@@ -65,27 +82,42 @@ int activeRequestors = 0;
     }
     else {
         NSLog(@"Error reading motion : %@", err);
-        [motionMan stopDeviceMotionUpdates];
+        [self motionReporterShouldReport:false];
     }
 }
 
+// This method lets you pick what motion controls you want to control the parallax
+// They each have slightly different behaviors, so pick the one that works the best for you
 - (void) parseAndReportMotion:(CMDeviceMotion *)motion {
     
+    //Pitch and roll motion
+    {
 //    cachePitch = motion.attitude.pitch;
 //    cacheRoll = motion.attitude.roll;
-
-    cachePitch = motion.attitude.quaternion.x;
-    cacheRoll = motion.attitude.quaternion.y;
+//    NSLog(@"Pitch:%1.3f, Roll:%1.3f", motion.attitude.pitch, motion.attitude.roll);
+    }
     
-    calcPitch = (cachePitch-refPitch) * 2;
-    calcRoll = (cacheRoll-refRoll) *2;
-    
-//    NSLog(@"pitch:%1.3f roll:%1.3f", calcPitch, calcRoll);
-    
+    //Quaternion based motion
+    {
+//    cachePitch = motion.attitude.quaternion.x;
+//    cacheRoll = motion.attitude.quaternion.y;
 //    NSLog(@"qX:%1.3f qY:%1.3f qZ:%1.3f qW:%1.3f", motion.attitude.quaternion.x, motion.attitude.quaternion.y, motion.attitude.quaternion.z, motion.attitude.quaternion.w);
+    }
     
-//    NSLog(@"pitch:%1.3f sinPitch:%1.3f cosPitch:%1.3f tanPitch:%1.3f", calcPitch, sin(calcPitch), cos(calcPitch), tan(calcPitch));
-
+    //Gravity based motion
+    {
+    cachePitch = motion.gravity.y;
+    cacheRoll = motion.gravity.x;
+//    NSLog(@"Gr4vity:%1.3f, %1.3f, %1.3f", motion.gravity.x, motion.gravity.y, motion.gravity.z);
+    }
+    
+    
+    //These calculate your pitch based on whatever measurements you've enabled above
+    //You can multiply these values if you want to get more extreme motion from the same input
+    calcPitch = (cachePitch-refPitch);
+    calcRoll = (cacheRoll-refRoll);
+    
+    //This notification lets the StackControllers know that we have new
     [notif postNotificationName:@"motionReported" object:nil];
 }
 
@@ -95,13 +127,17 @@ int activeRequestors = 0;
     [referenceTimer fire];
 }
 
+// This method is fired by receiving the notification "resetFrame", and establishes a zero at the last cache
 - (void) orientToCurrentRotation {
+
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSLog(@"Old vals => pitch:%f, roll:%f", refPitch, refRoll);
+
+//        NSLog(@"\nOld vals => pitch:%1.3f, roll:%1.3f \nNew vals => pitch:%1.3f, roll:%1.3f", refPitch, refRoll, cachePitch, cacheRoll);
         refPitch = cachePitch;
         refRoll = cacheRoll;
-        NSLog(@"New vals => pitch:%f, roll:%f", refPitch, refRoll);
+        
     });
+    
 }
 
 @end

@@ -41,19 +41,33 @@ NTMotionReporter *reporter;
 }
 
 
-
+//Processing is done in the background, and then the view is updated on the main thread
 -(void)updateViewFromNotification:(NSNotification *)n {
 
-    double roll = reporter.calcRoll;
-    double pitch = reporter.calcPitch;
-    
-    double xOffset = horizontalMotionRange * (roll/3.14);
-    double yOffset = verticalMotionRange * (pitch/3.14);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        CGRect currFrame = parallaxView.frame;
+        
+        double roll = reporter.calcRoll;
+        double pitch = reporter.calcPitch;
+        
+        double xOffset = horizontalMotionRange * (roll/3.14);
+        double yOffset = verticalMotionRange * (pitch/3.14);
+        
+        double newX = origX+xOffset;
+        double newY = origY+yOffset;
+        
+        //This prevents unnecessary updating of the view for movements of less than one pixel (at rest)
+        if (abs(currFrame.origin.x-newX)<1 && abs(currFrame.origin.y-newY<1)) {
+//            NSLog(@"insignificant motion");
+            return;
+        }
 
-    double newX = origX+xOffset;
-    double newY = origY+yOffset;
-    dispatch_sync(dispatch_get_main_queue(), ^{
-        [self.parallaxView setFrame:CGRectMake(newX, newY, parallaxView.frame.size.width, parallaxView.frame.size.height)];
+        dispatch_async(dispatch_get_main_queue(), ^{
+//            NSLog(@"significant motion");
+            [self.parallaxView setFrame:CGRectMake(newX, newY, currFrame.size.width, currFrame.size.height)];
+        });
+        
     });
 }
 
