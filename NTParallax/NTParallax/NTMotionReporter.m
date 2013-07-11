@@ -36,7 +36,6 @@ int activeRequestors = 0;
     if (mR == nil) {
         mR = [[super allocWithZone:NULL] init];
         NSLog(@"I've been called into existence!");
-        
         [mR setupMotionManager];
         
         [notif addObserver:mR selector:@selector(orientToCurrentRotation) name:@"resetFrame" object:nil];
@@ -47,6 +46,8 @@ int activeRequestors = 0;
 - (void) setupMotionManager {
     if (motionMan == nil) {
         motionMan = [CMMotionManager new];
+        //update interval at 48 frames per second
+        [motionMan setDeviceMotionUpdateInterval:.021];
         motionUpdateQueue = [NSOperationQueue new];
         [motionMan startDeviceMotionUpdatesToQueue:motionUpdateQueue withHandler:^(CMDeviceMotion *motion, NSError *error){
             [self gatherMotion:motion andError:error];
@@ -69,14 +70,21 @@ int activeRequestors = 0;
 }
 
 - (void) parseAndReportMotion:(CMDeviceMotion *)motion {
-
-    cachePitch = motion.attitude.pitch;
-    cacheRoll = motion.attitude.roll;
     
-    calcPitch = cachePitch-refPitch;
-    calcRoll = cacheRoll-refRoll;
+//    cachePitch = motion.attitude.pitch;
+//    cacheRoll = motion.attitude.roll;
+
+    cachePitch = motion.attitude.quaternion.x;
+    cacheRoll = motion.attitude.quaternion.y;
+    
+    calcPitch = (cachePitch-refPitch) * 2;
+    calcRoll = (cacheRoll-refRoll) *2;
     
 //    NSLog(@"pitch:%1.3f roll:%1.3f", calcPitch, calcRoll);
+    
+//    NSLog(@"qX:%1.3f qY:%1.3f qZ:%1.3f qW:%1.3f", motion.attitude.quaternion.x, motion.attitude.quaternion.y, motion.attitude.quaternion.z, motion.attitude.quaternion.w);
+    
+//    NSLog(@"pitch:%1.3f sinPitch:%1.3f cosPitch:%1.3f tanPitch:%1.3f", calcPitch, sin(calcPitch), cos(calcPitch), tan(calcPitch));
 
     [notif postNotificationName:@"motionReported" object:nil];
 }

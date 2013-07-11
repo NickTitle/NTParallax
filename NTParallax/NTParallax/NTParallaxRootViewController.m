@@ -73,11 +73,11 @@
     [topView addSubview:headline2];
     
     
-    [sC addLayerToPStack:bottomView motionRange:-150 origin:CGPointMake(-40, -20)];
+    [sC addLayerToPStack:bottomView motionRange:-250 origin:CGPointMake(-90, -90)];
 
-    [sC addLayerToPStack:midView motionRange:-120 origin:CGPointMake(0, 0)];
+    [sC addLayerToPStack:midView motionRange:-200 origin:CGPointMake(0, 0)];
 
-    [sC addLayerToPStack:earthView motionRange:40 origin:CGPointMake(70, 225)];
+    [sC addLayerToPStack:earthView motionRange:-80 origin:CGPointMake(70, 225)];
     
     [sC addLayerToPStack:topView motionRange:80 origin:CGPointMake(0, 350)];
 
