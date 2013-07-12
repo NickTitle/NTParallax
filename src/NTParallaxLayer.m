@@ -56,15 +56,8 @@ NTMotionReporter *reporter;
         
         double newX = origX+xOffset;
         double newY = origY+yOffset;
-        
-        //This prevents unnecessary updating of the view for movements of less than one pixel (at rest)
-        if (abs(currFrame.origin.x-newX)<1 && abs(currFrame.origin.y-newY<1)) {
-//            NSLog(@"insignificant motion");
-            return;
-        }
 
         dispatch_async(dispatch_get_main_queue(), ^{
-//            NSLog(@"significant motion");
             [self.parallaxView setFrame:CGRectMake(newX, newY, currFrame.size.width, currFrame.size.height)];
         });
         
