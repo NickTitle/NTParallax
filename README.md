@@ -12,6 +12,7 @@ Add custom parallax to your apps in just a few small steps:
 4. Instantiate the ```NTParallaxStackController```
 5. Add the ```NTParallaxStackController``` to your target view controller
 6. Add ```NTParallaxLayer```s to the ```NTParallaxStackController```
+7. 7. Update your frame of reference and display your view (by posting a notification called ```@"resetFrame"```)
 
 - You can have as many ```NTParallaxStackController```s as you want.
 - Each ```NTParallaxStackController``` can have as many ```NTParallaxLayer```s as you need.
