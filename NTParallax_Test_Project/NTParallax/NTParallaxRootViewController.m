@@ -68,7 +68,7 @@
     [headline2 setNumberOfLines:0];
     [headline2 setTextAlignment:NSTextAlignmentCenter];
     [headline2 setTextColor:[UIColor whiteColor]];
-    [headline2 setText:@"Click earth to reset zero point"];
+    [headline2 setText:@"Tap earth to reset zero point"];
     [headline2 setFont:[UIFont systemFontOfSize:18]];
     [topView addSubview:headline2];
     
