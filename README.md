@@ -22,3 +22,12 @@ Add custom parallax to your apps in just a few small steps:
 ![Image](http://i.imgur.com/MJXE7Pg.png&raw=png)
 ![Image](http://i.imgur.com/qYjhh8g.png&raw=png)
 ![Image](http://i.imgur.com/TQ7Lvbu.png&raw=png)
+
+
+
+
+
+
+
+*This software is provided without any warantee or guarantees of any sort.*
+*If you use this library in your works, I only ask that you provide a link to this github repo so others can find it too!*
